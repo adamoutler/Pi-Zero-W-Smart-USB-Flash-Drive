@@ -49,7 +49,7 @@ I don't have other printers to test, so I don't know how they are configured.  I
 * USB to Micro USB Cable
 * [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)*
 
-*Note, will not work on other Raspberry Pi's since they do not support USB OTG.
+*Note, this solution should work on any Raspberry Pi's that supports USB OTG (On-The-Go). This includes the Raspberry Pi 4 (via the USB-C port), but testing, and offical support, is limited to the Zero W.  
 
 ### Usage
 
