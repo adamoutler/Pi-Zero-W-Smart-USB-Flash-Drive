@@ -33,6 +33,11 @@ I based this project on the work documented in the MagPi magazine [article](http
 
 ![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/screenshots/USB-Share-Settings.png)
 
+#### Version 2.2.0
+* Added the ability to resize teh USB partition from the Settings page
+* Added ability to upgrade without re-imaging SDCard (CLI from v2.1.x; GUI going forward)
+
+![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share-Settings-2-2-0.png)
 
 ### 3D Printer Support
 
