@@ -39,6 +39,16 @@ I based this project on the work documented in the MagPi magazine [article](http
 
 ![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share-Settings-2-2-0.png)
 
+#### Version 2.2.1
+* Add progress indicators to the Mono X print controls.
+* Updated the Mono X management screen to use async calls to get printer stand and eliminate browser reloads.
+* Separated the printer file listing from the printer progress UIs.
+      - Printer file list shown while printer is stopped; hidden while printer is running.
+
+![Mono X File Listing](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share--Mono-X-File-Listing.png)
+![Mono X Printer Progress](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share--Mono-X-Print-Progress.png)
+
+
 ### 3D Printer Support
 
 This project should work for most (if not all) 3D printers as a USB drive.
@@ -70,7 +80,7 @@ __* Note: Do not add/remove files while you are printing/watching a file from th
 
 ### Create SD Card
 
-Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/v2.2.0-release).
+Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/2.2.1-release).
 
 Step 2. Extract the image from the zip archive.
 
