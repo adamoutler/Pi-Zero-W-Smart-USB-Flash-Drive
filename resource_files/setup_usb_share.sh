@@ -107,8 +107,7 @@ systemctl start usbshare.service
 #
 
 sudo rm -rf /var/www/html/*
-sudo rm -rf /home/pi/.usb_share_resources/portal/html_source/*
-sudo rm -rf /home/pi/.usb_share_resources/portal/scripts/*
+sudo rm -rf /home/pi/.usb_share_resources/portal/*
 
 sudo cp -R /home/pi/usb_share_full_install/portal/html_source/* /var/www/html/
 
