@@ -39,7 +39,7 @@ I based this project on the work documented in the MagPi magazine [article](http
 
 ![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share-Settings-2-2-0.png)
 
-#### Version 2.2.1
+#### Version 2.2.2
 * Add progress indicators to the Mono X print controls.
 * Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.
 * Separated the printer file listing from the printer progress UIs.
