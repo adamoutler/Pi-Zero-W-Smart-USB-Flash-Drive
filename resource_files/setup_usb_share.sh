@@ -1,9 +1,18 @@
 #
+# stop services 
+#
+
+service smbd stop;
+modprobe -r g_mass_storage;
+umount /home/pi/USB_Share/upload;
+
+#
 # Remove unwanted software
 #
 
 apt-get remove --purge libreoffice* -y
 apt-get purge wolfram-engine -y
+
 
 
 #
@@ -13,13 +22,12 @@ apt-get purge wolfram-engine -y
 apt-get update
 apt-get install samba winbind python3-pip apache2 php libapache2-mod-php gcc g++ cmake libjpeg8-dev imagemagick libv4l-dev arp-scan -y
 pip3 install watchdog
-
 apt-get clean
 apt-get autoremove -y
 
 
 #
-# get content from create-more
+# get content from gethub
 #
 
 if [ -d "/home/pi/usb_share_full_install" ]; then 
@@ -42,11 +50,6 @@ fi
 if ! grep "dwc2" /etc/modules; then 
         echo "dwc2" >> /etc/modules;
 fi
-
-#cp /etc/fstab /home/pi/usb_share_full_install/setup/system_files/fstab
-#chmod 666 /home/pi/usb_share_full_install/setup/system_files/fstab
-#echo "/home/pi/USB_Share/usbdisk.img /home/pi/USB_Share/upload vfat users,umask=000 0 2" >> /home/pi/usb_share_full_install/setup/system_files/fstab
-#cp 	/home/pi/usb_share_full_install/setup/system_files/fstab /etc/fstab
 
 cp -R /home/pi/usb_share_full_install/setup/system_files/prep_* /usr/local/bin/
 cp /home/pi/usb_share_full_install/setup/system_files/monox_wifi.py /usr/local/share/monox_wifi.py
@@ -81,8 +84,15 @@ fi
 
 mkdosfs /home/pi/USB_Share/usbdisk.img -F 32 -I
 
-echo "/home/pi/USB_Share/usbdisk.img /home/pi/USB_Share/upload vfat users,umask=000 0 2" >> /etc/fstab
-mount -a
+cp /etc/fstab /home/pi/usb_share_full_install/setup/system_files/fstab
+
+if ! grep "/home/pi/USB_Share/upload" /home/pi/usb_share_full_install/setup/system_files/fstab; then 
+        chmod 666 /home/pi/usb_share_full_install/setup/system_files/fstab
+        echo "/home/pi/USB_Share/usbdisk.img /home/pi/USB_Share/upload vfat users,umask=000 0 2" >> /home/pi/usb_share_full_install/setup/system_files/fstab
+        cp /home/pi/usb_share_full_install/setup/system_files/fstab /etc/fstab
+fi
+
+mount /home/pi/USB_Share/upload
 
 cp /home/pi/usb_share_full_install/portal/system_files/smb.conf /etc/samba/smb.conf
 service smbd restart
@@ -100,17 +110,18 @@ rm -rf /var/www/html/*
 rm -rf /home/pi/.usb_share_resources/portal/html_source/*
 rm -rf /home/pi/.usb_share_resources/portal/scripts/*
 
-cp -R /home/pi/usb_share_upgrade/portal/html_source/* /var/www/html/
-cp -R /home/pi/usb_share_upgrade/portal/html_source/* /home/pi/.usb_share_resources/portal/html_source/
-cp -R /home/pi/usb_share_upgrade/portal/scripts/* /home/pi/.usb_share_resources/portal/scripts/
-cp -R /home/pi/usb_share_upgrade/setup/system_files/upgrade_usb_share /usr/local/bin/
-cp -f /home/pi/usb_share_upgrade/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
+cp -R /home/pi/usb_share_full_install/portal/html_source/* /var/www/html/
+cp -R /home/pi/usb_share_full_install/portal/html_source /home/pi/.usb_share_resources/portal/
+cp -R /home/pi/usb_share_full_install/portal/scripts /home/pi/.usb_share_resources/portal/
+cp -R /home/pi/usb_share_full_install/portal/system_files /home/pi/.usb_share_resources/portal/
+cp -R /home/pi/usb_share_full_install/setup/system_files/upgrade_usb_share /usr/local/bin/
+cp -f /home/pi/usb_share_full_install/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
 
 chmod 777 /home/pi/.usb_share_resources/portal/scripts/*
 chmod 777 /usr/local/bin/upgrade_usb_share
 chmod -R a+w /var/www/html/*
-chmod -R a+w /home/pi/.usb_share_resources/portal/*
 chmod -R a+r /var/www/html/*
+chmod -R a+w /home/pi/.usb_share_resources/portal/*
 chmod -R a+r /home/pi/.usb_share_resources/portal/*
 
 sed -i 's@upload_max_filesize = 2M@upload_max_filesize = 128M@g' /etc/php/7.3/apache2/php.ini
