@@ -106,31 +106,30 @@ systemctl start usbshare.service
 # Setup portal
 #
 
-rm -rf /var/www/html/*
-rm -rf /home/pi/.usb_share_resources/portal/html_source/*
-rm -rf /home/pi/.usb_share_resources/portal/scripts/*
+sudo rm -rf /var/www/html/*
+sudo rm -rf /home/pi/.usb_share_resources/portal/html_source/*
+sudo rm -rf /home/pi/.usb_share_resources/portal/scripts/*
 
-cp -R /home/pi/usb_share_full_install/portal/html_source/* /var/www/html/
-cp -R /home/pi/usb_share_full_install/portal/html_source /home/pi/.usb_share_resources/portal/
-cp -R /home/pi/usb_share_full_install/portal/scripts /home/pi/.usb_share_resources/portal/
-cp -R /home/pi/usb_share_full_install/portal/system_files /home/pi/.usb_share_resources/portal/
-cp -R /home/pi/usb_share_full_install/setup/system_files/upgrade_usb_share /usr/local/bin/
-cp -f /home/pi/usb_share_full_install/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
+sudo cp -R /home/pi/usb_share_full_install/portal/html_source/* /var/www/html/
 
-chmod 777 /home/pi/.usb_share_resources/portal/scripts/*
-chmod 777 /usr/local/bin/upgrade_usb_share
-chmod -R a+w /var/www/html/*
-chmod -R a+r /var/www/html/*
-chmod -R a+w /home/pi/.usb_share_resources/portal/*
-chmod -R a+r /home/pi/.usb_share_resources/portal/*
+sudo cp -R /home/pi/usb_share_full_install/portal/html_source /home/pi/.usb_share_resources/portal/
+sudo cp -R /home/pi/usb_share_full_install/portal/scripts /home/pi/.usb_share_resources/portal/
+sudo cp -R /home/pi/usb_share_full_install/portal/system_files /home/pi/.usb_share_resources/portal/
+
+sudo cp -R /home/pi/usb_share_full_install/setup/system_files/upgrade_usb_share /usr/local/bin/
+sudo cp -f /home/pi/usb_share_full_install/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
+
+sudo chmod 777 /home/pi/.usb_share_resources/portal/scripts/*
+sudo chmod 777 /usr/local/bin/upgrade_usb_share
+sudo chmod -R a+w /var/www/html/*
+sudo chmod -R a+r /var/www/html/*
+sudo chmod -R a+w /home/pi/.usb_share_resources/portal/*
+sudo chmod -R a+r /home/pi/.usb_share_resources/portal/*
 
 sed -i 's@upload_max_filesize = 2M@upload_max_filesize = 128M@g' /etc/php/7.3/apache2/php.ini
 sed -i 's@post_max_size = 8M@post_max_size = 128M@g' /etc/php/7.3/apache2/php.ini
 
 cp /home/pi/usb_share_full_install/setup/system_files/mono_x_wifi.service /etc/systemd/system
-systemctl daemon-reload
-systemctl enable mono_x_wifi.service
-systemctl start mono_x_wifi.service
 
 #
 # Setup camera
