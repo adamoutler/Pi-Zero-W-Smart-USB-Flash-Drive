@@ -41,7 +41,7 @@ I based this project on the work documented in the MagPi magazine [article](http
 
 #### Version 2.2.1
 * Add progress indicators to the Mono X print controls.
-* Updated the Mono X management screen to use async calls to get printer stand and eliminate browser reloads.
+* Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.
 * Separated the printer file listing from the printer progress UIs.
       - Printer file list shown while printer is stopped; hidden while printer is running.
 
