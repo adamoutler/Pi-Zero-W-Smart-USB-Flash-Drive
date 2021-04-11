@@ -43,10 +43,10 @@ if ! grep "dwc2" /etc/modules; then
         echo "dwc2" >> /etc/modules;
 fi
 
-cp /etc/fstab /home/pi/usb_share_full_install/setup/system_files/fstab
-chmod 666 /home/pi/usb_share_full_install/setup/system_files/fstab
-echo "/home/pi/USB_Share/usbdisk.img /home/pi/USB_Share/upload vfat users,umask=000 0 2" >> /home/pi/usb_share_full_install/setup/system_files/fstab
-cp 	/home/pi/usb_share_full_install/setup/system_files/fstab /etc/fstab
+#cp /etc/fstab /home/pi/usb_share_full_install/setup/system_files/fstab
+#chmod 666 /home/pi/usb_share_full_install/setup/system_files/fstab
+#echo "/home/pi/USB_Share/usbdisk.img /home/pi/USB_Share/upload vfat users,umask=000 0 2" >> /home/pi/usb_share_full_install/setup/system_files/fstab
+#cp 	/home/pi/usb_share_full_install/setup/system_files/fstab /etc/fstab
 
 cp -R /home/pi/usb_share_full_install/setup/system_files/prep_* /usr/local/bin/
 cp /home/pi/usb_share_full_install/setup/system_files/monox_wifi.py /usr/local/share/monox_wifi.py
