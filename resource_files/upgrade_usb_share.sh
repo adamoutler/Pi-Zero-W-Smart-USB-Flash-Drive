@@ -19,9 +19,9 @@ sudo rm -rf /home/pi/.usb_share_resources/portal/*
 
 sudo cp -R /home/pi/usb_share_upgrade/portal/html_source/* /var/www/html/
 
-sudo cp -R /home/pi/usb_share_upgrade/portal/html_source /home/pi/.usb_share_resources/portal/
-sudo cp -R /home/pi/usb_share_upgrade/portal/scripts /home/pi/.usb_share_resources/portal/
-sudo cp -R /home/pi/usb_share_upgrade/portal/system_files /home/pi/.usb_share_resources/portal/
+sudo cp -R /home/pi/usb_share_upgrade/portal/html_source /home/pi/.usb_share_resources/portal
+sudo cp -R /home/pi/usb_share_upgrade/portal/scripts /home/pi/.usb_share_resources/portal
+sudo cp -R /home/pi/usb_share_upgrade/portal/system_files /home/pi/.usb_share_resources/portal
 
 sudo cp -R /home/pi/usb_share_upgrade/setup/system_files/upgrade_usb_share /usr/local/bin/
 sudo cp -f /home/pi/usb_share_upgrade/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
