@@ -26,10 +26,12 @@ sudo cp -R /home/pi/usb_share_full_install/portal/scripts /home/pi/.usb_share_re
 sudo cp -R /home/pi/usb_share_full_install/portal/system_files /home/pi/.usb_share_resources/portal
 
 sudo cp -R /home/pi/usb_share_full_install/setup/system_files/upgrade_usb_share /usr/local/bin/
+sudo cp -R /home/pi/usb_share_full_install/setup/system_files/beta_upgrade_usb_share /usr/local/bin/
 sudo cp -f /home/pi/usb_share_full_install/portal/current_version.txt /home/pi/.usb_share_resources/portal/current_version.txt
 
 sudo chmod 777 /home/pi/.usb_share_resources/portal/scripts/*
 sudo chmod 777 /usr/local/bin/upgrade_usb_share
+sudo chmod 777 /usr/local/bin/beta_upgrade_usb_share
 sudo chmod -R a+w /var/www/html/*
 sudo chmod -R a+r /var/www/html/*
 sudo chmod -R a+w /home/pi/.usb_share_resources/portal/*
