@@ -15,7 +15,9 @@ rm -rf /home/pi/usb_share_full_install.zip
 #
 
 sudo rm -rf /var/www/html/*
-sudo rm -rf /home/pi/.usb_share_resources/portal/*
+sudo rm -rf /home/pi/.usb_share_resources/portal/html_source
+sudo rm -rf /home/pi/.usb_share_resources/portal/scripts
+sudo rm -rf /home/pi/.usb_share_resources/portal/system_files
 
 sudo cp -R /home/pi/usb_share_full_install/portal/html_source/* /var/www/html/
 
@@ -32,7 +34,6 @@ sudo chmod -R a+w /var/www/html/*
 sudo chmod -R a+r /var/www/html/*
 sudo chmod -R a+w /home/pi/.usb_share_resources/portal/*
 sudo chmod -R a+r /home/pi/.usb_share_resources/portal/*
-
 #
 # cleanup
 #
