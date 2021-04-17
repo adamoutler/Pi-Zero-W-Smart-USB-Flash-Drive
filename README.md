@@ -62,7 +62,7 @@ I don't have other printers to test, so I don't know how they are configured.  I
 * MicroSD Card >= 8GB
 * MicroSD Card Adapter/Reader
 * USB to Micro USB Cable
-* [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)*
+* [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)* or [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 
 *Note, this solution should work on any Raspberry Pi's that supports USB OTG (On-The-Go). This includes the Raspberry Pi 4 (via the USB-C port), but testing, and offical support, is limited to the Zero W.  
 
@@ -80,7 +80,7 @@ __* Note: Do not add/remove files while you are printing/watching a file from th
 
 ### Create SD Card
 
-Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/2.2.1-release).
+Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/2.3.0-release).
 
 Step 2. Extract the image from the zip archive.
 
