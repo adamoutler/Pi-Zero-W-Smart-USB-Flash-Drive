@@ -1,6 +1,11 @@
 # Pi Zero W Smart USB Flash Drive
 SMB enabled network share that appears as a USB drive to a connected device
 
+**** there is an issue with 2.3.0. When starting a print job make sure the correct file actually loads. Sorting the list may have introduced a bug. I'll fix it as soon as o can ******
+
+
+
+
 ### Acknowledgements
 
 I based this project on the work documented in the MagPi magazine [article](https://magpi.raspberrypi.org/articles/pi-zero-w-smart-usb-flash-drive) by the same name.  It was written by [Russell Barnes](https://magpi.raspberrypi.org/articles/author/77pb3df8MQLs3i8qTd0C8Q). It also borrows some ideas from [Giles Davison's](https://github.com/gilesdavison) now defunct RadaDASH project.
