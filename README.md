@@ -49,8 +49,12 @@ I based this project on the work documented in the MagPi magazine [article](http
 ![Mono X Printer Progress](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share--Mono-X-Print-Progress.png)
 
 #### Version 2.3.0
-* Drang and drop file upload
+* Drag and drop file upload
 * Performance/bug fixes
+
+#### Version 2.3.1
+* Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.
+* Corrected bug that broke the GUI based upgrade process.
 
 ### 3D Printer Support
 
