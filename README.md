@@ -204,38 +204,3 @@ Step 10. Restart the Raspberry Pi
 sudo reboot
 ```
 
-### Changing the Host Name (CLI)
-
-By default, the USB device will be named #DPRINTER.  However, you can change this if you wish by updating the hostname on the Pi.
-
-Step 1. Login to the Raspberry Pi using the UserID/Password combination provided above.
-
-Step 2. Change the name in the /etc/hostname file
-```
-sudo nano /etc/hostname
-```
-Press CTRL+O followed by Enter to save, and then CTRL+X to quit.
-
-Step 3. Change the name in the /etc/hosts file
-```
-sudo nano /etc/hosts
-```
-Press CTRL+O followed by Enter to save, and then CTRL+X to quit.
-
-Step 3. Restart the Raspberry Pi
-```
-sudo reboot
-```
-
-### Enabling the ANYCUBIC WIFI service (CLI)
-
-The ANYCUBIC Mono X printer has built-in WIFI capabilities.  This printer option is configured using a text file named _WIFI.txt_ that is _printed_ on the printer.  If you wish to have this file automatically created and added to the available files on the USB drive, based on what was configured in the wpa_supplicant.conf file, follow these instructions.
-
-Step 1. Login to the Raspberry Pi using the UserID/Password combination provided above.
-
-Step 2. Run the following commands:
-```
-sudo systemctl daemon-reload
-sudo systemctl enable monox_wifi.service
-sudo systemctl start monox_wifi.service
-```
