@@ -34,6 +34,9 @@ sudo chmod -R a+w /var/www/html/*
 sudo chmod -R a+r /var/www/html/*
 sudo chmod -R a+w /home/pi/.usb_share_resources/portal/*
 sudo chmod -R a+r /home/pi/.usb_share_resources/portal/*
+
+sudo cp /home/pi/usb_share_full_install/setup/system_files/mono_x_wifi.service /etc/systemd/system
+
 #
 # cleanup
 #
