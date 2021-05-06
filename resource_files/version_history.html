@@ -1,0 +1,85 @@
+
+<section>
+    <h2>Version History</h2>
+
+    <article>
+        <h3>Version 1.0</h3>
+        <ul>
+            <li>Remotely accessible USB device (uploading, deleting)</li>
+            <li>2GB shared storage pre-configured (Default)</li>
+            <li>Can be used as a USB drive on any device (including Mac, Windows, TV, and 3D printers)</li>
+            <li>After updates on the network-share, the Pi waits 30 seconds and then automatically disconnects (unplugs) and reconnects the USB interface so changes appear on the target device</li>
+            <li>Create ANYCUBIC WIFI.txt file based on the Raspberry Pi's configuration</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.1.5</h3>
+        <ul>
+            <li>Web-based management portal</li>
+            <li>Local storge management (Upload/delete)</li>
+            <li>Network scanning</li>
+            <li>RPi Camera Streaming</li>
+            <li>Mono X printing control</li>
+            <li>Settings
+                <ul>
+                <li>Update hostname</li>
+                <li>Enable camera streaming</li>
+                <li>Enable Mono X features</li>
+                <li></li>
+                </ul>
+            </li>
+            <li>RPi power management (reboot / shutdown)</li>
+            <li>RPi eject / reset virtual USP drive</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.2.0/h3>
+        <ul>
+            <li>Added the ability to resize teh USB partition from the Settings page</li>
+            <li>Added ability to upgrade without re-imaging SDCard (CLI from v2.1.x; GUI going forward)</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.2.2</h3>
+        <ul>
+            <li>Add progress indicators to the Mono X print controls.</li>
+            <li>Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.</li>
+            <li>Separated the printer file listing from the printer progress UIs. - Printer file list shown while printer is stopped; hidden while printer is running.</li>
+            <li>Mono X File Listing Mono X Printer Progress</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.3.0/h3>
+        <ul>
+            <li>Drag and drop file upload</li>
+            <li>Performance/bug fixes</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.3.1</h3>
+        <ul>
+            <li>Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.</li>
+            <li>Corrected bug that broke the GUI based upgrade process.</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.4.0-beta</h3>
+        <ul>
+            <li>Fixed shutdown button</li>
+            <li>Disabled WiFi power saver on WLAN0</li>
+            <li>Added support for Any Cubic Mono SE</li>
+            <li>Restructured file layout; moved document root to /home/pi/usb_share/html_root</li>
+            <li>Changed the img file creation to dynamic space allocation; improved expansion</li>
+        </ul>
+    </article>
+    <article>
+        <h3>Version 2.4.1-beta</h3>
+        <ul>
+            <li>Fixed Samba mount issue preventing network access to shared drive</li>
+            <li>Added detailed Upgrade page</li>
+        </ul>
+    </article>
+</section>
