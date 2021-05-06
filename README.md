@@ -56,6 +56,25 @@ I based this project on the work documented in the MagPi magazine [article](http
 * Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.
 * Corrected bug that broke the GUI based upgrade process.
 
+#### Version 2.4.0-beta
+
+Bug Fixes:
+ - Fixed shutdown button
+ - Fixed/allow file uploads while the printer is turned off
+
+Changes: 
+ - Disabled WiFi power saver on WLAN0
+ - Added support for Any Cubic Mono SE
+ - Restructured file layout; moved document root to /home/pi/usb_share/html_root
+ - Changed the img file creation to dynamic space allocation; improved expansion
+
+Installation:
+
+Because of the file system changes, you need to re-image your SD card.  The changes are too complex to apply over previous versions. Follow the instruction on the Read Me page.
+
+
+
+
 ### 3D Printer Support
 
 This project should work for most (if not all) 3D printers as a USB drive.
