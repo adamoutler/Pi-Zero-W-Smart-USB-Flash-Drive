@@ -3,12 +3,15 @@
             <p>
             Version 2.4.x is substationally diffrent from previous versions. The file structure was changed to better organize the content and to 
             improve the performance when expanding the avaialable USB storage.  Because of this, a full re-image of the Raspberry Pi SD card is 
-            required to move to the new code base. Plesae download the full image from GitHub. 
+            required to move to the new code base if you are version 2.3.1 or earlier. Plesae download the full image from GitHub. 
             </p>
             <a class="btn btn-warning" href="https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/download/2.4.1-beta/usb_share_v2.4.1-beta.img.zip">usb_share_v2.4.0-beta.img.zip</a>
+            
+            
             </div>
+            <p>If you are currently on version 4.2.1 BETA or newer, you can use the upgrade feature in the application:</p>
 
-            <div style="display:none;">
+            <div>
                 <form class = "form-inline" role="form" method="post" enctype="multipart/form-data" action="/includes/upgrade_portal.php">
                     <button type="submit" class="btn btn-warning">Upgrade to Version: <?php echo $current_version; ?></button>
                 </form>
