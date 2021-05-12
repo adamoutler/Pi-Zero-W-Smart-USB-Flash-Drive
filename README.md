@@ -1,72 +1,35 @@
 # Pi Zero W Smart USB Flash Drive
-SMB enabled network share that appears as a USB drive to a connected device
+SMB enabled network share that appears as a USB drive to a connected device, and web-based portal for controlling AnyCubic Mono X/SE printers. 
 
 ### Acknowledgements
 
 I based this project on the work documented in the MagPi magazine [article](https://magpi.raspberrypi.org/articles/pi-zero-w-smart-usb-flash-drive) by the same name.  It was written by [Russell Barnes](https://magpi.raspberrypi.org/articles/author/77pb3df8MQLs3i8qTd0C8Q). It also borrows some ideas from [Giles Davison's](https://github.com/gilesdavison) now defunct RadaDASH project.
 
 ### Features
-#### Version 1.0
+
 * Remotely accessible USB device (uploading, deleting)
 * 2GB shared storage pre-configured (Default)
 * Can be used as a USB drive on any device (including Mac, Windows, TV, and 3D printers)
 * After updates on the network-share, the Pi waits 30 seconds and then automatically disconnects (unplugs) 
   and reconnects the USB interface so changes appear on the target device
 * Create ANYCUBIC WIFI.txt file based on the Raspberry Pi's configuration
-
-#### Version 2.1.5
 * Web-based management portal
   * Local storge management (Upload/delete)
+  * Drag & Drop file upload
   * Network scanning
   * RPi Camera Streaming
-  * Mono X printing control
+  * Mono X/SE printing control
+    * Start / Stop / Pause
+    * Percent complete 
+    * Layers complete
+    * Time Remaining
   * Settings
     * Update hostname
     * Enable camera streaming
-    * Enable Mono X features
+    * Extend the USB storage based on avaialbe space
+    * Enable Mono X/SE features
   * RPi power management (reboot / shutdown)
   * RPi eject / reset virtual USP drive
-
-![Summary Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/screenshots/USB-Share-Summary.png)
-
-![Mono X Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/screenshots/USB-Share-Mono-X-Control.png)
-
-![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/screenshots/USB-Share-Settings.png)
-
-#### Version 2.2.0
-* Added the ability to resize teh USB partition from the Settings page
-* Added ability to upgrade without re-imaging SDCard (CLI from v2.1.x; GUI going forward)
-
-![Settings Example](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share-Settings-2-2-0.png)
-
-#### Version 2.2.2
-* Add progress indicators to the Mono X print controls.
-* Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.
-* Separated the printer file listing from the printer progress UIs.
-      - Printer file list shown while printer is stopped; hidden while printer is running.
-
-![Mono X File Listing](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share--Mono-X-File-Listing.png)
-![Mono X Printer Progress](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/raw/main/screenshots/USB-Share--Mono-X-Print-Progress.png)
-
-#### Version 2.3.0
-* Drag and drop file upload
-* Performance/bug fixes
-
-#### Version 2.3.1
-* Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.
-* Corrected bug that broke the GUI based upgrade process.
-
-#### Version 2.4.0-beta
-
-Bug Fixes:
- - Fixed shutdown button
- - Fixed/allow file uploads while the printer is turned off
-
-Changes: 
- - Disabled WiFi power saver on WLAN0
- - Added support for Any Cubic Mono SE
- - Restructured file layout; moved document root to /home/pi/usb_share/html_root
- - Changed the img file creation to dynamic space allocation; improved expansion
 
 Installation:
 
@@ -79,9 +42,9 @@ Because of the file system changes, you need to re-image your SD card.  The chan
 
 This project should work for most (if not all) 3D printers as a USB drive.
 
-However, there is an additional feature for the [ANYCUBIC Photon Mono X](https://www.anycubic.com/products/photon-mono-x-resin-printer) printer. There is an optional service that can be enabled to dynamically create a WIFI.txt file in the ANYCUBIC format to help configure the printer to match the network configuration on the Raspberry Pi W.
+However, there is an additional feature for the [ANYCUBIC Photon Mono X](https://www.anycubic.com/products/photon-mono-x-resin-printer) and [ANYCUBIC Photon Mono SE](https://www.anycubic.com/collections/anycubic-photon-3d-printers/products/photon-mono-se-lcd-3d-printer) printes. There is an optional service that can be enabled to dynamically create a WIFI.txt file in the ANYCUBIC format to help configure the printer to match the network configuration on the Raspberry Pi W. You can also start / stop / pause print jobs from the portal.It provides simular features as teh AnyCubic Mobile App.
 
-I don't have other printers to test, so I don't know how they are configured.  If they are similar, I'm happy to work with you add support in a future release. Open an issue and make a suggestion.
+I don't have other printers to test, so I don't know how they are configured.  If they are similar, I'm happy to work with you add support in a future release. Open an issue and make a suggestion. THey must be WiFI enabled and controled from a web API.
 
 ### Prerequisites
 
@@ -158,67 +121,8 @@ Once connected, you will see a shared named _USB_ where you can load your files.
 
 **After you add files to the drive, you need to wait 30 seconds. After that, the Pi will disconenct and re-connect the USB interface so your changes can appear**
 
-# Optional configurations
+# Default Credentials
 
-The following optional configurations can be made from the Pi console or over SSH.
+userID: pi
 
-Default userID: pi
-
-Default password: raspberry
-
-### Change the size of the USB drive (based on available space)
-
-By default, the USB drive is configured as a 2GB drive.  This is set to accommodate smaller SD Cards. However, you can change this by recreating the image file on the Raspberry Pi.
-
-Step 1. Login to the Raspberry Pi using the UserID/Password combination provided above.
-
-Step 2. Stop the USB OTG service
-```
-sudo modprobe -r g_mass_storage
-```
-
-Step 3. Unmount the existing disk image
-```
-sudo umount /home/pi/USB_Share/upload
-```
-
-Step 4. Remove the existing disk image file
-```
-sudo rm /home/pi/USB_Share/usbdisk.img
-```
-Step 5. Check the available free space
-
-The command df -h shows your disk space usage. Look at the Avail column for /dev/root to see how much free space you have.
-```
-df -h
-```
-
-Step 6. Create a new disk image file
-
-The command below will create an empty 2GB binary file, change the count=2048 parameter to your new size (i.e., 10 GB = 10240, 25 GB = 25600, 48 GB = 49152). **keep a couple of GB free**; if you fill the card completely full, the image will become corrupt while running.
-
-Creating the disk image will take a long time to complete. Seriously, walk away... the Pi W is slow, but it will finish.
-```
-sudo dd bs=1M if=/dev/zero of=/home/pi/USB_Share/usbdisk.img count=2048
-```
-
-Step 7. Formate the disk image as FAT32
-```
-sudo mkdosfs /home/pi/USB_Share/usbdisk.img -F 32 -I
-```
-
-Step 8. Remount the disk image
-```
-sudo mount -a
-```
-
-Step 9. Start the USB OTG service
-```
-sudo modprobe g_mass_storage file=/home/pi/USB_Share/usbdisk.img stall=0 ro=0 removable=1
-```
-
-Step 10. Restart the Raspberry Pi
-```
-sudo reboot
-```
-
+password: raspberry
