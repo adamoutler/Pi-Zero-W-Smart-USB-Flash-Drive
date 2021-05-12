@@ -1,6 +1,10 @@
 # Pi Zero W Smart USB Flash Drive
 SMB enabled network share that appears as a USB drive to a connected device, and web-based portal for controlling AnyCubic Mono X/SE printers. 
 
+### Support
+
+This project is free to use, and I hope you do, but it also take a lot of time to keep working on making it better. Consider "buying me a book" through this [link](https://www.buymeacoffee.com/tds2021) to help keep this development going.  That way I can learning new ways to make this (and other projects) better.  Think of it as karma-ware.  Have a great day!
+
 ### Acknowledgements
 
 I based this project on the work documented in the MagPi magazine [article](https://magpi.raspberrypi.org/articles/pi-zero-w-smart-usb-flash-drive) by the same name.  It was written by [Russell Barnes](https://magpi.raspberrypi.org/articles/author/77pb3df8MQLs3i8qTd0C8Q). It also borrows some ideas from [Giles Davison's](https://github.com/gilesdavison) now defunct RadaDASH project.
