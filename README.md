@@ -78,7 +78,7 @@ Step 3. Copy Image to SD Card
 (MacOS) Connect the MicroSD card to your computer and flash the usb_share image using [balenaEtcher](https://www.balena.io/etcher/).
 (Windows) Connect the MicroSD card to your computer and flash the usb_share image using [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
 
-Step 4. Edit the [wpa_supplicant.conf](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/wpa_supplicant.conf) file provided, changing the placeholders network and password to your wireless networks SSID and password.
+Step 4. Edit the [wpa_supplicant.conf](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/wpa_supplicant.conf) file provided, changing the placeholders network and password to your wireless networks SSID and password. Make sure that an "extra" file extension is added when you savethe file to your computer (such as txt). The file name must remain wpa_supplicant.conf. 
 
 Step 5. Copy the *wpa_supplicant.conf* file to the boot partition of the SD card.
 
