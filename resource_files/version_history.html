@@ -3,13 +3,66 @@
     <h3>Version History</h3>
 
     <article>
-        <h4>Version 1.0</h4>
+        <h4>Version 2.4.3-beta</h4>
         <ul>
-            <li>Remotely accessible USB device (uploading, deleting)</li>
-            <li>2GB shared storage pre-configured (Default)</li>
-            <li>Can be used as a USB drive on any device (including Mac, Windows, TV, and 3D printers)</li>
-            <li>After updates on the network-share, the Pi waits 30 seconds and then automatically disconnects (unplugs) and reconnects the USB interface so changes appear on the target device</li>
-            <li>Create ANYCUBIC WIFI.txt file based on the Raspberry Pi's configuration</li>
+            <li>Modified the AnyCubic Photon control page to dynamically reload the file list every 15-30 sec. Previously it only loaded on the initial page load.</li>
+            <li>Added configuration options to the file drag/upload interface to force file chunking to help with larger files.</li>
+        </ul>
+    </article>
+    <article>
+        <h4>Version 2.4.2-beta</h4>
+        <ul>
+            <li>Fixed Anycubic Photon Mono SE support issues (added valid file type)</li>
+            <li>Added timeout to Async calls on various pages</li>
+            <li>Added periodic restart watchdog to the Camera streaming to address kernel panic issues</li>
+        </ul>
+    </article>
+    <article>
+        <h4>Version 2.4.1-beta</h4>
+        <ul>
+            <li>Fixed Samba mount issue preventing network access to shared drive</li>
+            <li>Fixed issue with Anybubic WiFi service</li>
+            <li>Added detailed Upgrade page</li>
+        </ul>
+    </article>
+    <article>
+        <h4>Version 2.4.0-beta</h4>
+        <ul>
+            <li>Fixed shutdown button</li>
+            <li>Disabled WiFi power saver on WLAN0</li>
+            <li>Added support for Any Cubic Mono SE</li>
+            <li>Restructured file layout; moved document root to /home/pi/usb_share/html_root</li>
+            <li>Changed the img file creation to dynamic space allocation; improved expansion</li>
+        </ul>
+    </article>
+    <article>
+        <h4>Version 2.3.1</h4>
+        <ul>
+            <li>Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.</li>
+            <li>Corrected bug that broke the GUI based upgrade process.</li>
+        </ul>
+    </article>   
+    <article>
+        <h4>Version 2.3.0</h4>
+        <ul>
+            <li>Drag and drop file upload</li>
+            <li>Performance/bug fixes</li>
+        </ul>
+    </article>    
+    <article>
+        <h4>Version 2.2.2</h4>
+        <ul>
+            <li>Add progress indicators to the Mono X print controls.</li>
+            <li>Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.</li>
+            <li>Separated the printer file listing from the printer progress UIs. - Printer file list shown while printer is stopped; hidden while printer is running.</li>
+            <li>Mono X File Listing Mono X Printer Progress</li>
+        </ul>
+    </article>
+    <article>
+        <h4>Version 2.2.0</h4>
+        <ul>
+            <li>Added the ability to resize teh USB partition from the Settings page</li>
+            <li>Added ability to upgrade without re-imaging SDCard (CLI from v2.1.x; GUI going forward)</li>
         </ul>
     </article>
     <article>
@@ -32,66 +85,13 @@
         </ul>
     </article>
     <article>
-        <h4>Version 2.2.0</h4>
+        <h4>Version 1.0</h4>
         <ul>
-            <li>Added the ability to resize teh USB partition from the Settings page</li>
-            <li>Added ability to upgrade without re-imaging SDCard (CLI from v2.1.x; GUI going forward)</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.2.2</h4>
-        <ul>
-            <li>Add progress indicators to the Mono X print controls.</li>
-            <li>Updated the Mono X management screen to use async calls to get printer status and eliminate browser reloads.</li>
-            <li>Separated the printer file listing from the printer progress UIs. - Printer file list shown while printer is stopped; hidden while printer is running.</li>
-            <li>Mono X File Listing Mono X Printer Progress</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.3.0</h4>
-        <ul>
-            <li>Drag and drop file upload</li>
-            <li>Performance/bug fixes</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.3.1</h4>
-        <ul>
-            <li>Corrected bug that caused the wrong file to be loaded wehn starting a print job from teh Web GUI.</li>
-            <li>Corrected bug that broke the GUI based upgrade process.</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.4.0-beta</h4>
-        <ul>
-            <li>Fixed shutdown button</li>
-            <li>Disabled WiFi power saver on WLAN0</li>
-            <li>Added support for Any Cubic Mono SE</li>
-            <li>Restructured file layout; moved document root to /home/pi/usb_share/html_root</li>
-            <li>Changed the img file creation to dynamic space allocation; improved expansion</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.4.1-beta</h4>
-        <ul>
-            <li>Fixed Samba mount issue preventing network access to shared drive</li>
-            <li>Fixed issue with Anybubic WiFi service</li>
-            <li>Added detailed Upgrade page</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.4.2-beta</h4>
-        <ul>
-            <li>Fixed Anycubic Photon Mono SE support issues (added valid file type)</li>
-            <li>Added timeout to Async calls on various pages</li>
-            <li>Added periodic restart watchdog to the Camera streaming to address kernel panic issues</li>
-        </ul>
-    </article>
-    <article>
-        <h4>Version 2.4.3-beta</h4>
-        <ul>
-            <li>Modified teh AnyCubic Phonton control page to dynamically relaod the file list every 15-30 sec.  Previously it only loaded on the inital page laod.</li>
-            <li>Added configuraiton options to teh file drag/uplaod interface to force file chunking to help with larger files.</li>
+            <li>Remotely accessible USB device (uploading, deleting)</li>
+            <li>2GB shared storage pre-configured (Default)</li>
+            <li>Can be used as a USB drive on any device (including Mac, Windows, TV, and 3D printers)</li>
+            <li>After updates on the network-share, the Pi waits 30 seconds and then automatically disconnects (unplugs) and reconnects the USB interface so changes appear on the target device</li>
+            <li>Create ANYCUBIC WIFI.txt file based on the Raspberry Pi's configuration</li>
         </ul>
     </article>
 </section>
