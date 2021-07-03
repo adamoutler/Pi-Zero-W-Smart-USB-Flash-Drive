@@ -50,15 +50,35 @@ However, there is an additional feature for the [ANYCUBIC Photon Mono X](https:/
 
 I don't have other printers to test, so I don't know how they are configured.  If they are similar, I'm happy to work with you add support in a future release. Open an issue and make a suggestion. THey must be WiFI enabled and controled from a web API.
 
-### Prerequisites
+### Required Hardware
 
 * MicroSD Card >= 8GB
 * MicroSD Card Adapter/Reader
-* USB to Micro USB Cable
-* [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)* or [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+* Raspberry Pi Zero W (Preferred) or Raspberry Pi 4 Model B
+* Raspberry Pi Camera (Optional)
 
-*Note, this solution should work on any Raspberry Pi's that supports USB OTG (On-The-Go). This includes the Raspberry Pi 4 (via the USB-C port), but testing, and offical support, is limited to the Zero W.  
+##### Tested Configuration : Raspberry Pi Zero W
+* Raspberry Pi Zero W [(Amazon Link)](https://www.amazon.com/dp/B06XFZC3BX/ref=cm_sw_em_r_mt_dp_35EQ2N514EABRRM8R7RE)
+* SanDisk 8GB Industrial MLC MicroSD  [(Amazon link)](https://www.amazon.com/dp/B07BLQHVQD/ref=cm_sw_em_r_mt_dp_XVQ7KHRXRNXN6DV40EPY)
+* USB-A to Micro USB Cable  [(Amazon link)](https://www.amazon.com/dp/B07DPHL9KD/ref=cm_sw_em_r_mt_dp_2GCW7HG5DQ9PC20EFHYP)
+* Raspberry Pi Camera Module V2  [(Amazon link)](https://www.amazon.com/dp/B083BHJZ16/ref=cm_sw_em_r_mt_dp_NNNHGF3RMTJTE69MTRJA)
 
+   NOTE: You must use the "pwr" port to conenct to the printer. The "usb" port does not support USB OTG.
+
+##### Tested Configuration  : Raspberry Pi 4 Model B
+
+* Raspberry Pi 4 Model B [(Amazon Link)](https://www.amazon.com/dp/B07TC2BK1X/ref=cm_sw_em_r_mt_dp_33E804805T39R0WY6Z8N)
+* SanDisk 8GB Industrial MLC MicroSD  [(Amazon link)](https://www.amazon.com/dp/B07BLQHVQD/ref=cm_sw_em_r_mt_dp_XVQ7KHRXRNXN6DV40EPY)
+* USB-A to USB-C Cable  [(Amazon link)](https://www.amazon.com/dp/B0711C43JP/ref=cm_sw_em_r_mt_dp_WT0M3F9H0BRP7P008EP7)
+* Raspberry Pi Camera Module V2  [(Amazon link)](https://www.amazon.com/dp/B083BHJZ16/ref=cm_sw_em_r_mt_dp_NNNHGF3RMTJTE69MTRJA)
+
+   NOTE: You must use the USB-C "pwr" port to conenct to the printer. The USB-A ports on the RPi 4 do not support USB OTG.
+
+
+  
+  
+  
+  
 ### Usage
 
 1. Create SD Card from the provided image file
