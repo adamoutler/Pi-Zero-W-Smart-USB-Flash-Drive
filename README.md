@@ -93,7 +93,7 @@ __* Note: Do not add/remove files while you are printing/watching a file from th
 
 ### Create SD Card
 
-Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/2.3.0-release).
+Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases).
 
 Step 2. Extract the image from the zip archive.
 
