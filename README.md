@@ -58,19 +58,30 @@ I don't have other printers to test, so I don't know how they are configured.  I
 * Raspberry Pi Camera (Optional)
 
 ##### Tested Configuration : Raspberry Pi Zero W
-* Raspberry Pi Zero W [(Amazon Link)](https://www.amazon.com/dp/B06XFZC3BX/ref=cm_sw_em_r_mt_dp_35EQ2N514EABRRM8R7RE)
+* Raspberry Pi Zero W [(details)](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
 * SanDisk 8GB Industrial MLC MicroSD  [(Amazon link)](https://www.amazon.com/dp/B07BLQHVQD/ref=cm_sw_em_r_mt_dp_XVQ7KHRXRNXN6DV40EPY)
 * USB-A to Micro USB Cable  [(Amazon link)](https://www.amazon.com/dp/B07DPHL9KD/ref=cm_sw_em_r_mt_dp_2GCW7HG5DQ9PC20EFHYP)
 * Raspberry Pi Camera Module V2  [(Amazon link)](https://www.amazon.com/dp/B083BHJZ16/ref=cm_sw_em_r_mt_dp_NNNHGF3RMTJTE69MTRJA)
+* Tested on version 2.4.4
+
+   NOTE: You must use the "pwr" port to conenct to the printer. The "usb" port does not support USB OTG.
+   
+##### Tested Configuration : Raspberry Pi Zero 2 W
+* Raspberry Pi Zero W [(details)](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+* SanDisk 8GB Industrial MLC MicroSD  [(Amazon link)](https://www.amazon.com/dp/B07BLQHVQD/ref=cm_sw_em_r_mt_dp_XVQ7KHRXRNXN6DV40EPY)
+* USB-A to Micro USB Cable  [(Amazon link)](https://www.amazon.com/dp/B07DPHL9KD/ref=cm_sw_em_r_mt_dp_2GCW7HG5DQ9PC20EFHYP)
+* Raspberry Pi Camera Module V2  [(Amazon link)](https://www.amazon.com/dp/B083BHJZ16/ref=cm_sw_em_r_mt_dp_NNNHGF3RMTJTE69MTRJA)
+* Tested on version 2.4.4
 
    NOTE: You must use the "pwr" port to conenct to the printer. The "usb" port does not support USB OTG.
 
 ##### Tested Configuration  : Raspberry Pi 4 Model B
 
-* Raspberry Pi 4 Model B [(Amazon Link)](https://www.amazon.com/dp/B07TC2BK1X/ref=cm_sw_em_r_mt_dp_33E804805T39R0WY6Z8N)
+* Raspberry Pi 4 Model B [(details)](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 * SanDisk 8GB Industrial MLC MicroSD  [(Amazon link)](https://www.amazon.com/dp/B07BLQHVQD/ref=cm_sw_em_r_mt_dp_XVQ7KHRXRNXN6DV40EPY)
 * USB-A to USB-C Cable  [(Amazon link)](https://www.amazon.com/dp/B0711C43JP/ref=cm_sw_em_r_mt_dp_WT0M3F9H0BRP7P008EP7)
 * Raspberry Pi Camera Module V2  [(Amazon link)](https://www.amazon.com/dp/B083BHJZ16/ref=cm_sw_em_r_mt_dp_NNNHGF3RMTJTE69MTRJA)
+* Tested on version 2.4.4
 
    NOTE: You must use the USB-C "pwr" port to conenct to the printer. The USB-A ports on the RPi 4 do not support USB OTG.
 
