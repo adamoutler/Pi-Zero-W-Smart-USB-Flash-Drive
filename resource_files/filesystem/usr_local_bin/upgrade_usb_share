@@ -1,0 +1,5 @@
+cd /tmp
+wget https://raw.githubusercontent.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/main/resource_files/upgrade_usb_share.sh
+#wget http://create-more.com/usb_share/upgrade_usb_share.sh
+chmod 777 upgrade_usb_share.sh
+sudo ./upgrade_usb_share.sh
