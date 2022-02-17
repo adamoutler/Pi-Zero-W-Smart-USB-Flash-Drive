@@ -20,3 +20,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: adamoutler
         PRERELEASE_SUFFIX: beta
+        DEFAULT_BUMP: patch
