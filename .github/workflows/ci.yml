@@ -14,7 +14,7 @@ jobs:
       run: |
         cd release
         ls -la
-    - name: Bump version and push tag
+    - name: Bump version and push tag.
       uses: anothrNick/github-tag-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
