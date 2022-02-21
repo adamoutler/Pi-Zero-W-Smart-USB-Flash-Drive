@@ -99,7 +99,7 @@ I don't have other printers to test, so I don't know how they are configured.  I
 
 ### Create SD Card
 
-Step 1. Download the latest [release](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/releases).
+Step 1. Download the latest [release](../../releases).
 
 Step 2. Extract the image from the zip archive.
 
@@ -108,7 +108,7 @@ Step 3. Copy Image to SD Card
 (MacOS) Connect the MicroSD card to your computer and flash the usb_share image using [balenaEtcher](https://www.balena.io/etcher/).
 (Windows) Connect the MicroSD card to your computer and flash the usb_share image using [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/).
 
-Step 4. Edit the [wpa_supplicant.conf](https://github.com/tds2021/Pi-Zero-W-Smart-USB-Flash-Drive/blob/main/wpa_supplicant.conf) file provided, changing the placeholders network and password to your wireless networks SSID and password. Make sure that an "extra" file extension is added when you savethe file to your computer (such as txt). The file name must remain wpa_supplicant.conf. 
+Step 4. Edit the [wpa_supplicant.conf](../main/wpa_supplicant.conf) file provided, changing the placeholders network and password to your wireless networks SSID and password. Make sure that an "extra" file extension is added when you savethe file to your computer (such as txt). The file name must remain wpa_supplicant.conf. 
 
 Step 5. Copy the `wpa_supplicant.conf` file to the boot partition of the SD card.
 
