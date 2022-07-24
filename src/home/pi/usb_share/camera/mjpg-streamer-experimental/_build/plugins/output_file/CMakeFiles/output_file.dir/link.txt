@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,output_file.so -o output_file.so CMakeFiles/output_file.dir/output_file.c.o 

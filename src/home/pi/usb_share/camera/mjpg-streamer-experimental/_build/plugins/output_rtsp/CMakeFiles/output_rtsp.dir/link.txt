@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,output_rtsp.so -o output_rtsp.so CMakeFiles/output_rtsp.dir/output_rtsp.c.o 

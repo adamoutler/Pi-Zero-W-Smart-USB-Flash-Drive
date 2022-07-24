@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,input_http.so -o input_http.so CMakeFiles/input_http.dir/input_http.c.o CMakeFiles/input_http.dir/misc.c.o CMakeFiles/input_http.dir/mjpg-proxy.c.o 

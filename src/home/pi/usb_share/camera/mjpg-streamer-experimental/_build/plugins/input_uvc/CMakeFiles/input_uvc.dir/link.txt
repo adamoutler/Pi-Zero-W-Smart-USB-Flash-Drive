@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,input_uvc.so -o input_uvc.so CMakeFiles/input_uvc.dir/dynctrl.c.o CMakeFiles/input_uvc.dir/input_uvc.c.o CMakeFiles/input_uvc.dir/jpeg_utils.c.o CMakeFiles/input_uvc.dir/v4l2uvc.c.o  -lv4l2 -ljpeg 

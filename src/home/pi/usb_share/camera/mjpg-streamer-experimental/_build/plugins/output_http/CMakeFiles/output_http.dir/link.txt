@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,output_http.so -o output_http.so CMakeFiles/output_http.dir/httpd.c.o CMakeFiles/output_http.dir/output_http.c.o 

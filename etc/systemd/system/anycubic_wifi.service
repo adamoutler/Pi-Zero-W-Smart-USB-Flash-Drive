@@ -1,0 +1,10 @@
+[Unit]
+Description=Mono X WiFI watchdog
+
+[Service]
+Type=simple
+ExecStart=/usr/local/share/anycubic_wifi.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

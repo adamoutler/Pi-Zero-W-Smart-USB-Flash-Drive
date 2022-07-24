@@ -1,0 +1,31 @@
+sudo rm -r /home/pi/usb_share/upload/*
+sudo rm -f /home/pi/usb_share/flags/enable_*
+sudo rm -f /home/pi/usb_share/flags/printer_*
+sudo rm -f /home/pi/usb_share/flags/rotate_*
+sudo rm -f /home/pi/usb_share/flags/upload_*
+
+chmod -R 555 /home/pi/usb_share/html_root/*.php
+chmod -R 555 /home/pi/usb_share/scripts/*.sh
+chmod -R 555 /home/pi/usb_share/scripts/*.py 
+
+sudo rm -f /var/log/apache2/*.log.*
+sudo truncate -s 0 /var/log/apache2/*
+
+sudo rm -f /var/log/samba/log.wb*
+sudo rm -f /var/log/samba/log.roger*
+sudo rm -f /var/log/samba/log.desktop-*
+sudo rm -f /var/log/samba/log.10*
+sudo rm -f /var/log/samba/*.1
+sudo rm -f /var/log/samba/log.
+sudo truncate -s 0 /var/log/samba/log.*
+
+sudo rm -f /var/log/*.1
+sudo rm -f /var/log/*.gz
+sudo truncate -s 0 /var/log/*.log
+sudo truncate -s 0 /var/log/btmp
+sudo truncate -s 0 /var/log/debug
+sudo truncate -s 0 /var/log/faillog
+sudo truncate -s 0 /var/log/lastlog
+sudo truncate -s 0 /var/log/messages
+sudo truncate -s 0 /var/log/syslog
+sudo truncate -s 0 /var/log/wtmp

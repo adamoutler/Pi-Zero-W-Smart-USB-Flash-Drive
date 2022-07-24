@@ -1,0 +1,62 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0e0bb/fast && make[1]: Entering directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0e0bb.dir/build.make CMakeFiles/cmTC_0e0bb.dir/build
+make[2]: Entering directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e0bb.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0e0bb.dir/src.c.o   -c /home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0e0bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e0bb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_0e0bb.dir/src.c.o  -o cmTC_0e0bb 
+/usr/bin/ld: CMakeFiles/cmTC_0e0bb.dir/src.c.o: in function `main':
+src.c:(.text+0x40): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x4c): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5c): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_0e0bb.dir/build.make:87: cmTC_0e0bb] Error 1
+make[2]: Leaving directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_0e0bb/fast] Error 2
+make[1]: Leaving directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5144d/fast && make[1]: Entering directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_5144d.dir/build.make CMakeFiles/cmTC_5144d.dir/build
+make[2]: Entering directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5144d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5144d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_5144d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5144d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_5144d.dir/CheckFunctionExists.c.o  -o cmTC_5144d  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_5144d.dir/build.make:87: cmTC_5144d] Error 1
+make[2]: Leaving directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_5144d/fast] Error 2
+make[1]: Leaving directory '/home/pi/.usb_share_resources/camera/mjpg-streamer-experimental/_build/CMakeFiles/CMakeTmp'
+
+
+

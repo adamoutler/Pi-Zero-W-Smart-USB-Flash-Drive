@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,output_udp.so -o output_udp.so CMakeFiles/output_udp.dir/output_udp.c.o 

@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,input_file.so -o input_file.so CMakeFiles/input_file.dir/input_file.c.o 
